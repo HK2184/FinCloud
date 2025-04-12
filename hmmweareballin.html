@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Financial Document Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      color: #00a86b;
+      margin-bottom: 20px;
+    }
+    input[type="file"] {
+      margin: 20px 0;
+    }
+    button {
+      padding: 12px 25px;
+      background: #00a86b;
+      color: white;
+      border: none;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #008456;
+    }
+    #outputBox, #entitiesBox {
+      margin-top: 30px;
+      text-align: left;
+      background: #f8f8f8;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: #333;
+      font-size: 15px;
+    }
+    .loader {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📄 Financial Document Intelligence</h1>
+    <p>Upload any invoice, bank statement, or salary slip to extract key financial details.</p>
+
+    <input type="file" id="imageUpload" accept="image/*">
+    <br>
+    <button onclick="uploadImage()">Upload & Analyze</button>
+    <div class="loader" id="loader">⏳ Processing...</div>
+
+    <div id="outputBox">
+      <h2>🧾 Extracted Text:</h2>
+      <pre id="extractedText">Your OCR results will appear here...</pre>
+    </div>
+
+    <div id="entitiesBox">
+      <h2>🔍 Extracted Entities:</h2>
+      <pre id="extractedEntities">Entities will appear here...</pre>
+    </div>
+  </div>
+
+  <script>
+    async function uploadImage() {
+      const input = document.getElementById("imageUpload");
+      const file = input.files[0];
+      const loader = document.getElementById("loader");
+
+      if (!file) {
+        alert("Please upload an image first.");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("image", file);
+
+      loader.style.display = "block";
+
+      try {
+        const response = await fetch("http://127.0.0.1:5000/ocr", {
+          method: "POST",
+          body: formData
+        });
+
+        const result = await response.json();
+        document.getElementById("extractedText").innerText = result.text || "No text found.";
+        document.getElementById("extractedEntities").innerText = JSON.stringify(result.entities || {}, null, 2);
+      } catch (error) {
+        console.error("Error during OCR:", error);
+        alert("Something went wrong. Please try again.");
+      } finally {
+        loader.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
