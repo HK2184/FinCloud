@@ -138,6 +138,14 @@ financial-document-intelligence/
 
 ---
 
+## **Sample Image**
+
+-<img src="https://github.com/user-attachments/assets/7ab62621-faac-4580-8dd5-56f0acf53c01" width="500" height="600">
+
+-<img src="https://github.com/user-attachments/assets/d3ab7c79-3e4c-44e1-b2f5-d6656f8f385c" width="500" height="500">
+
+---
+
 ## **Future Enhancements**
 
 - Add support for more document types like purchase receipts and tax forms.
@@ -158,12 +166,4 @@ Feel free to customize the README to fit your project’s specific requirements!
 Citations:
 [1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/62789894/1bb44bf1-6a95-4dd5-9aeb-28d91b9b8e3b/paste-1.txt
 
----
-Answer from Perplexity: pplx.ai/share
-
-
-
--<img src="https://github.com/user-attachments/assets/7ab62621-faac-4580-8dd5-56f0acf53c01" width="500" height="600">
-
--<img src="https://github.com/user-attachments/assets/d3ab7c79-3e4c-44e1-b2f5-d6656f8f385c" width="500" height="500">
 
