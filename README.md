@@ -6,8 +6,7 @@
 Images taken from kaggle data set
 -https://www.kaggle.com/datasets/mehaksingal/personal-financial-dataset-for-india
 
--![image](https://github.com/user-attachments/assets/7ab62621-faac-4580-8dd5-56f0acf53c01)
-
+-![image](https://github.com/user-attachments/assets/7ab62621-faac-4580-8dd5-56f0acf53c01) width ="100", height="100"
 
 
 
