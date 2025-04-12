@@ -1,6 +1,5 @@
 # **FinCloud ☁️**
-
-![Python](https://img.shields.io/badge/Python://img.shields.io/badge/Licen://img.shields.io/badge/Statu **FinCloud** is a Python-based system designed to process and analyze financial documents such as salary slips, utility bills, bank statements, and more. It leverages OCR, natural language processing (NLP), and structured data extraction to provide insights and generate reports dynamically.
+ **FinCloud** is a Python-based system designed to process and analyze financial documents such as salary slips, utility bills, bank statements, and more. It leverages OCR, natural language processing (NLP), and structured data extraction to provide insights and generate reports dynamically.
 
 ---
 
